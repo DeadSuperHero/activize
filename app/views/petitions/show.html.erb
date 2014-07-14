@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Cover:</strong>
-  <%= @petition.cover %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @petition.title %>
-</p>
+<div id="petition-container", class="col-xs-8">
+  <div id="petition">
 
-<p>
-  <strong>Description:</strong>
-  <%= @petition.description %>
-</p>
+  <%= link_to 'Edit', edit_petition_path(@petition) %>
 
-<p>
-  <strong>Signum:</strong>
-  <%= @petition.signum %>
-</p>
 
-<p>
-  <strong>Target:</strong>
-  <%= @petition.target %>
-</p>
+    <%= @petition.cover %>
+    <h2><%= @petition.title %></h2>
 
-<%= link_to 'Edit', edit_petition_path(@petition) %> |
-<%= link_to 'Back', petitions_path %>
+    <div class="date">
+      <%= @petition.created_at %>
+    </div>
+
+    <div class="target">
+     <b>Petition to:</b> <%= @petition.target %>
+    </div>
+
+    <div class="signum">
+      <b>Signatures needed:</b> <%= @petition.signum %>
+    </div>
+
+    <div class="description">
+    <%= markdown(@petition.description) %>
+
+  </div>
+</div>

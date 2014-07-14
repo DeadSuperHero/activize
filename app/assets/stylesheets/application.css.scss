@@ -13,3 +13,45 @@
  */
 
 @import 'bootstrap';
+
+html {
+	height: 100%;
+}
+
+input, textarea {
+	width: 100%;
+}
+
+textarea {
+	height: 9em;
+	overflow-y: scroll;
+}
+
+.date {
+	font-size: 0.7em;
+	color: #ddd;
+	text-align: left;
+	border-bottom: 1px dotted #ddd;
+	max-width: 100%;
+	display: inline-block;
+	position: relative;
+	top: -1em;
+}
+
+.signum {
+	display: inline-block;
+	float: right;
+	position: relative;
+}
+
+.description {
+	margin-top: 3em;
+}
+
+#petition-container {
+	float: none;
+	margin: auto;
+	border: 1px solid #ddd;
+	padding: 2em;
+	margin-top: 5em;
+}
