@@ -1,4 +1,4 @@
-<%= form_for(@petition) do |f| %>
+<%= simple_form_for(@petition) do |f| %>
   <% if @petition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@petition.errors.count, "error") %> prohibited this petition from being saved:</h2>
@@ -12,26 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :cover %><br>
-    <%= f.text_field :cover %>
+    <%= f.input :cover, label: "Cover Image" %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.input :title, label: "Title" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.input :description %>
   </div>
   <div class="field">
-    <%= f.label :signum %><br>
-    <%= f.number_field :signum %>
+    <%= f.input :signum, label: "Minimum amount of signatures?" %>
   </div>
   <div class="field">
-    <%= f.label :target %><br>
-    <%= f.text_field :target %>
+    <%= f.input :target, label: "Who is this petition for?" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit %>
   </div>
 <% end %>

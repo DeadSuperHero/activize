@@ -9,7 +9,7 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass'
-
+gem 'simple_form'
 
 #Get dat markdown
 gem 'redcarpet'
