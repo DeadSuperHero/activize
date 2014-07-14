@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @petition.cover %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @petition.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @petition.description %>
+</p>
+
+<p>
+  <strong>Signum:</strong>
+  <%= @petition.signum %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @petition.target %>
+</p>
+
+<%= link_to 'Edit', edit_petition_path(@petition) %> |
+<%= link_to 'Back', petitions_path %>
