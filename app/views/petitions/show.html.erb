@@ -4,26 +4,26 @@
 <div id="petition-container", class="col-xs-8">
   <div id="petition">
 
-  <%= link_to 'Edit', edit_petition_path(@petition) %>
+    <%= link_to 'Edit', edit_petition_path(@petition) %>
 
 
-    <%= @petition.cover %>
-    <h2><%= @petition.title %></h2>
+      <%= @petition.cover %>
+      <h2><%= @petition.title %></h2>
 
-    <div class="date">
-      <%= @petition.created_at %>
+      <div class="date">
+        <%= @petition.created_at %>
+      </div>
+
+      <div class="target">
+       <b>Petition to:</b> <%= @petition.target %>
+      </div>
+
+      <div class="signum">
+        <b>Signatures needed:</b> <%= @petition.signum %>
+      </div>
+
+      <div class="description">
+      <%= markdown(@petition.description) %>
+      </div>
     </div>
-
-    <div class="target">
-     <b>Petition to:</b> <%= @petition.target %>
-    </div>
-
-    <div class="signum">
-      <b>Signatures needed:</b> <%= @petition.signum %>
-    </div>
-
-    <div class="description">
-    <%= markdown(@petition.description) %>
-
-  </div>
 </div>

@@ -1,35 +1,18 @@
-<h1>Listing petitions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Cover</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Signum</th>
-      <th>Target</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div id="pagename", class="col-xs-8"><h3>Listing petitions</h3></div>
+ <div id="petition-container", class="col-xs-8">
+  <div id="petition">
     <% @petitions.each do |petition| %>
-      <tr>
-        <td><%= petition.cover %></td>
-        <td><%= petition.title %></td>
-        <td><%= petition.description %></td>
-        <td><%= petition.signum %></td>
-        <td><%= petition.target %></td>
-        <td><%= link_to 'Show', petition %></td>
-        <td><%= link_to 'Edit', edit_petition_path(petition) %></td>
-        <td><%= link_to 'Destroy', petition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%= petition.cover %>
+        <h2><%= link_to petition.title, petition %></h2>
+        <div class="date"><%= petition.created_at %></div>
+        <div class="target"><b>Petition to:</b> <%= petition.target %></div>
+        <div class="signum"><b>Number of Signatures Needed: </b><%= petition.signum %></div>
+        <%= markdown(petition.description) %>
+        <%= link_to 'Show', petition %>
+        <%= link_to 'Edit', edit_petition_path(petition) %>
+        <%= link_to 'Destroy', petition, method: :delete, data: { confirm: 'Are you sure?' } %>
       </tr>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Petition', new_petition_path %>
+  </div>
+</div>
+</div>

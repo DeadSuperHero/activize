@@ -40,7 +40,6 @@ textarea {
 
 .signum {
 	display: inline-block;
-	float: right;
 	position: relative;
 }
 
@@ -52,6 +51,27 @@ textarea {
 	float: none;
 	margin: auto;
 	border: 1px solid #ddd;
-	padding: 2em;
+	padding: 0em 2em 2em 2em;
 	margin-top: 5em;
+}
+
+#footer {
+	text-align: center;
+	padding: 30px 0px;
+	border-top: 1px solid #e5e5e5;
+	background-color: whitesmoke;
+	left: 0;
+	bottom: 0;
+	position: relative;
+	width: 100%;
+	margin-top: 2em;
+}
+
+
+#pagename {
+	margin: auto;
+	float: none;
+	margin-top: 5em;
+	margin-bottom: -4em;
+	margin-left: 13em;
 }
