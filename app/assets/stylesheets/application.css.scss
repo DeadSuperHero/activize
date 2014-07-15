@@ -82,3 +82,36 @@ textarea {
 	height: 100%;
 
 }
+
+#user-menu .btn {
+	color: white;
+	background-color: #464646;
+	border-color: #626568;
+	border-radius: 0;
+	height: inherit;
+	border-left: 0.1em solid rgb(10, 255, 0);
+}
+
+#user-menu ul.dropdown-menu {
+	left: auto;
+	width: 100%;
+	top: 2.5em;
+	border-radius: 0;
+	background-color: #424242;
+	color: white;
+}
+
+#user-menu ul.dropdown-menu li a {
+	color: white;
+}
+
+.user-avatar img {
+	max-height: 1.7em;
+	max-width: 2em;
+	margin-right: 0.3em;
+	border-right: 0.1em solid rgb(10, 255, 0);
+}
+
+.user-avatar, .user-name {
+	display: inline-block;
+}

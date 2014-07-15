@@ -12,7 +12,8 @@
 	<div class="dropdown navbar-right">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
 	<% if user_signed_in? %>    
-    <strong><%= current_user.email %></strong>
+    	<div class="user-avatar"><%= image_tag avatar_for @user %></div>
+    	<div class="user-name"><%= current_user.email %></div>
     <% else %>
     <strong>Anonymous User</strong>
     <% end %>
