@@ -10,14 +10,24 @@
 
 <div id="user-menu">
 	<div class="dropdown navbar-right">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    Menu
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+	<% if user_signed_in? %>    
+    <strong><%= current_user.email %></strong>
+    <% else %>
+    <strong>Anonymous User</strong>
+    <% end %>
     <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="/petitions/new">New Petition+</a></li>
-  </ul>
-</div>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			<% if user_signed_in? %>
+		        <li><%= link_to "Create Petition+", new_petition_path %></li>
+				<li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+				<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+			<% else %>
+				<li><%= link_to "Login", new_user_session_path %></li>
+			<% end %>
+		</ul>
+	</div>
 </div>
 
 </nav>

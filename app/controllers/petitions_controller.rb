@@ -4,7 +4,7 @@ class PetitionsController < ApplicationController
   # GET /petitions
   # GET /petitions.json
   def index
-    @petitions = Petition.all
+    @petitions = Petition.order("id DESC").all
   end
 
   # GET /petitions/1
