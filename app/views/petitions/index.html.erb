@@ -9,9 +9,10 @@
         <div class="signum"><b>Number of Signatures Needed: </b><%= petition.signum %></div>
         <%= markdown(petition.description) %>
         <%= link_to 'Show', petition %>
-        <%= link_to 'Edit', edit_petition_path(petition) %>
-        <%= link_to 'Destroy', petition, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </tr>
+        <% if petition.user == current_user %>
+          <%= link_to 'Edit', edit_petition_path(petition) %>
+          <%= link_to 'Destroy', petition, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
     <% end %>
   </div>
 </div>

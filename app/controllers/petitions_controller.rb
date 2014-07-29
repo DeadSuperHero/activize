@@ -1,5 +1,10 @@
 class PetitionsController < ApplicationController
+  before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :set_petition, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+
+
+
 
   # GET /petitions
   # GET /petitions.json
@@ -14,7 +19,7 @@ class PetitionsController < ApplicationController
 
   # GET /petitions/new
   def new
-    @petition = Petition.new
+    @petition = current_user.petitions.build
   end
 
   # GET /petitions/1/edit
@@ -24,7 +29,7 @@ class PetitionsController < ApplicationController
   # POST /petitions
   # POST /petitions.json
   def create
-    @petition = Petition.new(petition_params)
+    @petition = current_user.petitions.build(petition_params)
 
     respond_to do |format|
       if @petition.save
@@ -59,6 +64,11 @@ class PetitionsController < ApplicationController
       format.html { redirect_to petitions_url }
       format.json { head :no_content }
     end
+  end
+
+  def correct_user
+    @petition = current_user.petitions.find_by(id: params[:id])
+    redirect_to petitions_path, notice: "You don't have permission to edit this petition." if @petition.nil?
   end
 
   private
