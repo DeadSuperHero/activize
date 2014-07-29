@@ -5,6 +5,7 @@
         <%= petition.cover %>
         <h2><%= link_to petition.title, petition %></h2>
         <div class="date"><%= petition.created_at %></div>
+        <div class="author"><b>Author: </b><%= petition.user.name if petition.user %></div>
         <div class="target"><b>Petition to:</b> <%= petition.target %></div>
         <div class="signum"><b>Number of Signatures Needed: </b><%= petition.signum %></div>
         <%= markdown(petition.description) %>

@@ -13,7 +13,7 @@
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
 	<% if user_signed_in? %>    
     	<div class="user-avatar"><%= image_tag avatar_for @user %></div>
-    	<div class="user-name"><%= current_user.email %></div>
+    	<div class="user-name"><%= current_user.name %></div>
     <% else %>
     <strong>Anonymous User</strong>
     <% end %>

@@ -14,12 +14,12 @@
       <h2><%= @petition.title %></h2>
 
 
-      <div id="author">
-        <%= @petition.user.email if @petition.user %>
-      </div>
-
       <div class="date">
         <%= @petition.created_at %>
+      </div>
+
+      <div class="author">
+        <b>Author:</b> <%= @petition.user.name if @petition.user %>
       </div>
 
       <div class="target">
